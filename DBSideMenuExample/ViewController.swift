@@ -14,11 +14,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let homeMenuItem = DBSideMenuItem(with: "Home", image: (UIImage.init(systemName: "house")!), tintColor: .white, selectedTintColor: .white, selectedBackgroundColor: .blue)
-        // Do any additional setup after loading the view.
-        self.sideMenu.setSideMenu(bgColor: UIColor(named: "defaultColor")!, menuItems: [homeMenuItem], menuSize: CGSize.init(width: self.sideMenu.frame.size.width, height: self.sideMenu.frame.size.height))
+            
+        var itemConfig = DBSideMenuItemConfig()
+        itemConfig.titleFontSize = 12
+       
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 30)
+        let homeMenuItem = DBSideMenuItem(with: "Home", image: (UIImage.init(systemName: "house.fill", withConfiguration: symbolConfiguration)!))
+        homeMenuItem.config = itemConfig
+        let trashMenuItem = DBSideMenuItem(with: "Fornitori", image: (UIImage.init(systemName: "star.circle", withConfiguration: symbolConfiguration)!))
+        trashMenuItem.config = itemConfig
+        let bohMenuItem = DBSideMenuItem(with: "Clienti", image: (UIImage.init(systemName: "person.3.fill", withConfiguration: symbolConfiguration)!))
+        bohMenuItem.config = itemConfig
+
+        self.sideMenu.setSideMenu(bgColor: UIColor(named: "defaultColor")!, menuItems: [homeMenuItem,trashMenuItem,bohMenuItem], menuSize: CGSize.init(width: self.sideMenu.frame.size.width, height: self.sideMenu.frame.size.height))
     }
 
-
 }
-
