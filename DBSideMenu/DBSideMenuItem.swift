@@ -8,17 +8,17 @@
 
 import UIKit
 
-class DBSideMenuItem: NSObject {
+open class DBSideMenuItem: NSObject {
     
-    var title: String = ""
-    var image: UIImage = UIImage.init()
-    var tintColor: UIColor = .white
-    var selectedTintColor: UIColor = .white
-    var selectedBackgroundColor: UIColor = .white
+    public var title: String = ""
+    public var image: UIImage = UIImage.init()
+    public var tintColor: UIColor = .white
+    public var selectedTintColor: UIColor = .white
+    public var selectedBackgroundColor: UIColor = .white
 
     var button: UIButton!
 
-    convenience init(with title: String, image: UIImage, tintColor: UIColor, selectedTintColor: UIColor = .white, selectedBackgroundColor: UIColor) {
+    public convenience init(with title: String, image: UIImage, tintColor: UIColor, selectedTintColor: UIColor = .white, selectedBackgroundColor: UIColor) {
         self.init()
         self.title = title
         self.image = image

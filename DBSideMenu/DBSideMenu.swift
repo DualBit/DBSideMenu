@@ -8,30 +8,30 @@
 
 import UIKit
 
-class DBSideMenu: UIView {
+open class DBSideMenu: UIView {
 
     //private var menuButtons = [UIButton]()
     public var menuItems = [DBSideMenuItem]()
     public var menuSize : CGSize = CGSize(width: UIScreen.main.bounds.size.width / 5, height: UIScreen.main.bounds.size.height)
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.commonInit()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         self.commonInit()
     }
     
-    convenience init(bgColor: UIColor, menuItems: [DBSideMenuItem], menuSize: CGSize) {
+    public convenience init(bgColor: UIColor, menuItems: [DBSideMenuItem], menuSize: CGSize) {
         self.init()
         self.backgroundColor = bgColor
         self.menuItems = menuItems
         self.menuSize = menuSize
     }
     
-    func setSideMenu(bgColor: UIColor, menuItems: [DBSideMenuItem], menuSize: CGSize) {
+    public func setSideMenu(bgColor: UIColor, menuItems: [DBSideMenuItem], menuSize: CGSize) {
         self.backgroundColor = bgColor
         self.menuItems = menuItems
         self.menuSize = menuSize
@@ -51,7 +51,7 @@ class DBSideMenu: UIView {
         
     }
 
-    func commonInit() {
+    public func commonInit() {
         self.backgroundColor = UIColor.systemYellow
     }
     
