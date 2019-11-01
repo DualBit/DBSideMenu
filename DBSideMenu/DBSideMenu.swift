@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 11.0, *)
 open class DBSideMenu: UIView {
     
     //private var menuButtons = [UIButton]()

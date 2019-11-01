@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 11.0, *)
 public struct DBSideMenuItemConfig {
     /// The animation duration for showing/hiding the cancel button.
     public var titleTextColor: UIColor = defaultTextColor

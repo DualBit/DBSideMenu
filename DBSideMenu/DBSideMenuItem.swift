@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 11.0, *)
 open class DBSideMenuItem: NSObject {
     
     public var title: String = ""
