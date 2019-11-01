@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 11.0, *)
 public struct DBSideMenuConfig {
 
     /// Controls the visibility of the cancel button
