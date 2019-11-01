@@ -11,7 +11,7 @@ import UIKit
 public struct DBSideMenuConfig {
 
     /// Controls the visibility of the cancel button
-    public var color: UIColor = UIColor.init(named: "defaultColor") ?? .black
+    public var color: UIColor = UIColor(named: "defaultColor") ?? .black
 
     // MARK: - Lifecycle
 

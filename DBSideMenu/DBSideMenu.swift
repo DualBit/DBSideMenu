@@ -60,7 +60,7 @@ open class DBSideMenu: UIView {
         }
     }
     
-    public func setSideMenu(bgColor: UIColor = UIColor.init(named: "defaultColor") ?? .black, menuItems: [DBSideMenuItem], menuSize: CGSize) {
+    public func setSideMenu(bgColor: UIColor = UIColor(named: "defaultColor") ?? .black, menuItems: [DBSideMenuItem], menuSize: CGSize) {
         self.backgroundColor = bgColor
         self.menuSize = menuSize
         self.setMenuItems(menuItems: menuItems)
