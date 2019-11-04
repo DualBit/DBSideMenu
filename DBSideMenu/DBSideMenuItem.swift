@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DBSideMenuItemDelegate {
+public protocol DBSideMenuItemDelegate {
     func resetButtonsState()
 }
 
@@ -23,12 +23,22 @@ open class DBSideMenuItem: UIView {
         }
     }
     private var button: UIButton!
-    private var delegate: DBSideMenuItemDelegate?
+    public var delegate: DBSideMenuItemDelegate?
     
     convenience init(config: DBSideMenuItemConfig) {
         self.init()
         self.config = config
         self.commonInit()
+    }
+    
+    public convenience init(with title: String, image: UIImage, config: DBSideMenuItemConfig = DBSideMenuItemConfig()) {
+        self.init()
+        self.config = config
+        self.title = title
+        self.image = image
+        
+        self.commonInit()
+        self.singleInit()
     }
     
     private func commonInit() {
@@ -62,7 +72,7 @@ open class DBSideMenuItem: UIView {
         self.button.isSelected = !self.button.isSelected
     }
     
-    func addAction(for controlEvents: UIControl.Event = .touchUpInside, closure: @escaping ()->(Void)) {
+    public func addAction(for controlEvents: UIControl.Event = .touchUpInside, closure: @escaping ()->(Void)) {
         self.button.actionHandler(controlEvents: controlEvents, ForAction: closure)
     }
     
@@ -70,14 +80,8 @@ open class DBSideMenuItem: UIView {
         self.button.alignImageAndTitleVertically(padding: 6)
     }
     
-    public convenience init(with title: String, image: UIImage, config: DBSideMenuItemConfig = DBSideMenuItemConfig()) {
-        self.init()
-        self.config = config
-        self.title = title
-        self.image = image
-        
-        self.commonInit()
-        self.singleInit()
+    open func resetState() {
+        self.button.isSelected = false
     }
     
 }

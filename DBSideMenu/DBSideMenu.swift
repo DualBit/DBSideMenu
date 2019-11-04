@@ -9,7 +9,7 @@
 import UIKit
 
 @available(iOS 11.0, *)
-open class DBSideMenu: UIView {
+open class DBSideMenu: UIView, DBSideMenuItemDelegate {
     
     public var menuSize : CGSize = CGSize(width: UIScreen.main.bounds.size.width / 5, height: UIScreen.main.bounds.size.height)
     public var config: DBSideMenuConfig {
@@ -51,6 +51,7 @@ open class DBSideMenu: UIView {
     
     public func setMenuItems(menuItems: [DBSideMenuItem]) {
         for menuItem in menuItems {
+            menuItem.delegate = self
             self.stackView.addArrangedSubview(menuItem)
         }
     }
@@ -73,5 +74,15 @@ open class DBSideMenu: UIView {
     private func singleInit() {
         self.addSubview(self.stackView)
     }
+    
+    // MARK: DBSideMenuItem delegate methods
+    public func resetButtonsState() {
+        for stackViewItem in self.stackView.arrangedSubviews {
+            if let menuItem = stackViewItem as? DBSideMenuItem {
+                menuItem.resetState()
+            }
+        }
+    }
+    
     
 }
