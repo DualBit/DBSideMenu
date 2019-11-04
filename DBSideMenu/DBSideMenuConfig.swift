@@ -13,6 +13,8 @@ public struct DBSideMenuConfig {
 
     /// Controls the visibility of the cancel button
     public var color: UIColor = UIColor(named: "defaultColor") ?? .black
+    
+    
 
     // MARK: - Lifecycle
 

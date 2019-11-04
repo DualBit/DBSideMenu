@@ -17,16 +17,40 @@ class ViewController: UIViewController {
             
         var itemConfig = DBSideMenuItemConfig()
         itemConfig.titleFontSize = 12
+        itemConfig.selectedBackgroundItemColor = .green
        
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 30)
-        let homeMenuItem = DBSideMenuItem(with: "Home", image: (UIImage.init(systemName: "house.fill", withConfiguration: symbolConfiguration)!))
-        homeMenuItem.config = itemConfig
-        let trashMenuItem = DBSideMenuItem(with: "Fornitori", image: (UIImage.init(systemName: "star.circle", withConfiguration: symbolConfiguration)!))
-        trashMenuItem.config = itemConfig
-        let bohMenuItem = DBSideMenuItem(with: "Clienti", image: (UIImage.init(systemName: "person.3.fill", withConfiguration: symbolConfiguration)!))
-        bohMenuItem.config = itemConfig
+        let homeMenuItem = DBSideMenuItem(
+            with: "Home",
+            image: (UIImage.init(systemName: "house.fill", withConfiguration: symbolConfiguration)!),
+            config: itemConfig
+        )
+        homeMenuItem.addAction(for: .touchUpInside) { () -> (Void) in
+            debugPrint("home pressed")
+        }
+        let trashMenuItem = DBSideMenuItem(
+            with: "Fornitori",
+            image: (UIImage.init(systemName: "star.circle", withConfiguration: symbolConfiguration)!),
+            config: itemConfig
+        )
+        
+        let bohMenuItem = DBSideMenuItem(
+            with: "Clienti",
+            image: (UIImage.init(systemName: "person.3.fill", withConfiguration: symbolConfiguration)!),
+            config: itemConfig
+        )
 
-        self.sideMenu.setSideMenu(bgColor: UIColor(named: "defaultColor")!, menuItems: [homeMenuItem,trashMenuItem,bohMenuItem], menuSize: CGSize.init(width: self.sideMenu.frame.size.width, height: self.sideMenu.frame.size.height))
+        let bohMenuItem2 = DBSideMenuItem(
+            with: "Clienti",
+            image: (UIImage.init(systemName: "person.3.fill", withConfiguration: symbolConfiguration)!)
+        )
+        bohMenuItem2.config = itemConfig
+
+        self.sideMenu.setSideMenu(
+            bgColor: UIColor(named: "defaultColor")!,
+            menuItems: [trashMenuItem,homeMenuItem,bohMenuItem,bohMenuItem2],
+            menuSize: CGSize.init(width: self.sideMenu.frame.size.width, height: self.sideMenu.frame.size.height)
+        )
     }
 
 }

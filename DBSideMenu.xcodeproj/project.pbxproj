@@ -67,9 +67,9 @@
 		D31F4D7723646D8F00218E7D /* DBSideMenuExample */ = {
 			isa = PBXGroup;
 			children = (
+				D31F4D7C23646D8F00218E7D /* ViewController.swift */,
 				D31F4D7823646D8F00218E7D /* AppDelegate.swift */,
 				D31F4D7A23646D8F00218E7D /* SceneDelegate.swift */,
-				D31F4D7C23646D8F00218E7D /* ViewController.swift */,
 				D31F4D7E23646D8F00218E7D /* Main.storyboard */,
 				D31F4D8123646D9100218E7D /* Assets.xcassets */,
 				D31F4D8323646D9100218E7D /* LaunchScreen.storyboard */,

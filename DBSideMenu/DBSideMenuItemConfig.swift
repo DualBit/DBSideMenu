@@ -28,9 +28,6 @@ public struct DBSideMenuItemConfig {
     /// The animation duration for showing/hiding the cancel button.
     public var selectedBackgroundItemColor: UIColor = defaultBackgroundItemSelectedColor
     
-    /// Controls the visibility of the cancel button
-    public var showTitle: Bool = false
-    
     // MARK: - Lifecycle
     
     /// Use this initializer and then set the properties to your desired values.
