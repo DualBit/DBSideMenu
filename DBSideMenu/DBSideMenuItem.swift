@@ -8,12 +8,11 @@
 
 import UIKit
 
-@available(iOS 11.0, *)
-
 protocol DBSideMenuItemDelegate {
     func resetButtonsState()
 }
 
+@available(iOS 11.0, *)
 open class DBSideMenuItem: UIView {
     
     public var title: String = ""
