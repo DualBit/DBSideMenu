@@ -59,8 +59,6 @@ open class DBSideMenu: UIView, DBSideMenuItemDelegate {
     public func setSideMenu(bgColor: UIColor = UIColor(named: "defaultColor") ?? .black, menuItems: [DBSideMenuItem], menuSize: CGSize) {
         self.backgroundColor = bgColor
         self.menuSize = menuSize
-        let stackViewHeight = Int(self.frame.size.width) * menuItems.count
-        self.stackView.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: CGFloat(stackViewHeight))
         self.setMenuItems(menuItems: menuItems)
     }
     
@@ -73,6 +71,7 @@ open class DBSideMenu: UIView, DBSideMenuItemDelegate {
     
     private func singleInit() {
         self.addSubview(self.stackView)
+        self.stackView.bindFrameToSuperviewBounds()
     }
     
     // MARK: DBSideMenuItem delegate methods
