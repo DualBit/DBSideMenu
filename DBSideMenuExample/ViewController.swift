@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         homeMenuItem.addAction(for: .touchUpInside) { () -> (Void) in
             debugPrint("home pressed")
         }
+        homeMenuItem.setSelected(true)
         let trashMenuItem = DBSideMenuItem(
             with: "Fornitori",
             image: (UIImage.init(systemName: "star.circle", withConfiguration: symbolConfiguration)!),
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
 
         self.sideMenu.setSideMenu(
             bgColor: UIColor(named: "defaultColor")!,
-            menuItems: [trashMenuItem,homeMenuItem,bohMenuItem,bohMenuItem2],
+            menuItems: [homeMenuItem, trashMenuItem,bohMenuItem,bohMenuItem2],
             menuSize: CGSize.init(width: self.sideMenu.frame.size.width, height: self.sideMenu.frame.size.height)
         )
     }

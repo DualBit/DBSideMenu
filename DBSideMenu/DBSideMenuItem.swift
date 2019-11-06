@@ -76,6 +76,10 @@ open class DBSideMenuItem: UIView {
         self.button.actionHandler(controlEvents: controlEvents, ForAction: closure)
     }
     
+    public func setSelected(_ selected : Bool) {
+        self.button.isSelected = selected
+    }
+    
     open override func didMoveToSuperview() {
         self.button.alignImageAndTitleVertically(padding: 6)
     }
