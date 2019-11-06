@@ -34,7 +34,9 @@ class ViewController: UIViewController {
             image: (UIImage.init(systemName: "star.circle", withConfiguration: symbolConfiguration)!),
             config: itemConfig
         )
-        
+        trashMenuItem.addAction(for: .touchUpInside) { () -> (Void) in
+            debugPrint("trash pressed")
+        }
         let bohMenuItem = DBSideMenuItem(
             with: "Clienti",
             image: (UIImage.init(systemName: "person.3.fill", withConfiguration: symbolConfiguration)!),
